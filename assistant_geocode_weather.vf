@@ -1484,7 +1484,7 @@
               {
                 "type": "advance",
                 "variable": "apiKey",
-                "expression": "'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'"
+                "expression": "''"
               }
             ],
             "title": "API Key",
@@ -1528,7 +1528,7 @@
               {
                 "type": "advance",
                 "variable": "assistantID",
-                "expression": "'asst_GY08tv4lJFRF6W7y1Hyh1Oli'"
+                "expression": "''"
               }
             ],
             "title": "AssistantID",
@@ -3577,7 +3577,7 @@
               {
                 "type": "advance",
                 "variable": "apiMapBox",
-                "expression": "'pk.eyJ1Ijoia2xlcml0aCIsImEiOiJja2tvZHh4Y3YwMDhnMnBvY3ozbHUxdGJvIn0.3zptKSSxJrM5VmfjnkKMYA'"
+                "expression": "''"
               }
             ],
             "title": "API MAPBOX",
@@ -3603,7 +3603,7 @@
               {
                 "type": "advance",
                 "variable": "apiOpenWeather",
-                "expression": "'f369635965b00ad16ced5da4da4b9f3b'"
+                "expression": "''"
               }
             ],
             "title": "API OPENWEATHER",
