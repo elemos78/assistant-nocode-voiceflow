@@ -7,12 +7,12 @@
         "type": "DIAGRAM"
       }
     ],
-    "_version": 5,
+    "_version": 6,
     "creatorID": 299371,
     "prototype": {
       "type": "chat",
       "data": {
-        "name": "CustomGPT Assistant",
+        "name": "assistant_geocode_weather",
         "locales": [
           "en-US"
         ]
@@ -42,13 +42,177 @@
         "usedEventsSet": [],
         "usedIntentsSet": [],
         "goToIntentsSet": [],
-        "usedFunctionsMap": {}
+        "usedFunctionsMap": {},
+        "cmsVariables": {
+          "required_action": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "user_id": {
+            "isSystem": true,
+            "defaultValue": ""
+          },
+          "timestamp": {
+            "isSystem": true,
+            "defaultValue": ""
+          },
+          "platform": {
+            "isSystem": true,
+            "defaultValue": ""
+          },
+          "locale": {
+            "isSystem": true,
+            "defaultValue": ""
+          },
+          "apiKey": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "assistantID": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "threadID": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "runID": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "runStatus": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "messageID": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "assistantReply": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "counter": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "functionName": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "functionParams": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "sessions": {
+            "isSystem": true,
+            "defaultValue": ""
+          },
+          "search_text": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "lat": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "lon": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "responseAPI": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "tool_call_id": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "body": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "responseToolOutput": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "apiMapBox": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "apiOpenWeather": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          },
+          "intent_confidence": {
+            "isSystem": true,
+            "defaultValue": ""
+          },
+          "last_response": {
+            "isSystem": true,
+            "defaultValue": ""
+          },
+          "last_event": {
+            "isSystem": true,
+            "defaultValue": ""
+          },
+          "last_utterance": {
+            "isSystem": true,
+            "defaultValue": ""
+          },
+          "functionParamsText": {
+            "isSystem": false,
+            "defaultValue": "",
+            "datatype": "any",
+            "isArray": false
+          }
+        }
       },
       "settings": {},
       "platform": "webchat"
     },
     "variables": [
-      "sessions",
+      "required_action",
       "user_id",
       "timestamp",
       "platform",
@@ -63,7 +227,7 @@
       "counter",
       "functionName",
       "functionParams",
-      "functionParamsText",
+      "sessions",
       "search_text",
       "lat",
       "lon",
@@ -72,7 +236,12 @@
       "body",
       "responseToolOutput",
       "apiMapBox",
-      "apiOpenWeather"
+      "apiOpenWeather",
+      "intent_confidence",
+      "last_response",
+      "last_event",
+      "last_utterance",
+      "functionParamsText"
     ],
     "components": [
       {
@@ -174,7 +343,7 @@
     ],
     "autoSaveFromRestore": false,
     "_id": "659755d05643e2ffb19c1381",
-    "updatedAt": "2024-01-05T01:05:20.484Z",
+    "updatedAt": "2024-02-23T01:21:31.146Z",
     "domains": [
       {
         "id": "cla06iyr900b206pkh8d4ap8n",
@@ -185,7 +354,7 @@
         ],
         "rootDiagramID": "6552806214b35500124bdae9",
         "updatedBy": 299371,
-        "updatedAt": "2024-01-08T00:00:40.224Z"
+        "updatedAt": "2024-02-23T00:57:16.569Z"
       }
     ],
     "projectID": "659755d05643e2ffb19c1380",
@@ -1421,7 +1590,7 @@
         }
       },
       "offsetX": 272,
-      "offsetY": 104,
+      "offsetY": 204,
       "modified": 1699999587,
       "creatorID": 299371,
       "variables": [],
@@ -1457,7 +1626,7 @@
                     "points": [
                       {
                         "point": [
-                          -60.82,
+                          -60.83,
                           -704.69
                         ]
                       },
@@ -2077,29 +2246,29 @@
                     "points": [
                       {
                         "point": [
-                          2525.9,
-                          -61.99
+                          2525.9021949498247,
+                          -61.99416179959968
                         ],
                         "reversed": true
                       },
                       {
                         "point": [
                           2500.31,
-                          -61.99
+                          -61.99416179959968
                         ],
                         "locked": true
                       },
                       {
                         "point": [
                           2500.31,
-                          -637.91
+                          -637.9145414382715
                         ],
                         "locked": true
                       },
                       {
                         "point": [
-                          2430.83,
-                          -637.91
+                          2430.825839969356,
+                          -637.9145414382715
                         ],
                         "reversed": true
                       }
@@ -2220,16 +2389,8 @@
                 "var": "runStatus"
               },
               {
-                "path": "response.required_action.submit_tool_outputs.tool_calls[0].function.name",
-                "var": "functionName"
-              },
-              {
-                "path": "response.required_action.submit_tool_outputs.tool_calls[0].function.arguments",
-                "var": "functionParamsText"
-              },
-              {
-                "path": "response.required_action.submit_tool_outputs.tool_calls[0].id",
-                "var": "tool_call_id"
+                "path": "response.required_action",
+                "var": "65d7ea3ac883b0bba4706bd4"
               }
             ],
             "bodyType": "rawInput",
@@ -2242,7 +2403,35 @@
                   "type": "next",
                   "target": "655bde666692b1475024a160",
                   "id": "655bde666692b1475024a15e",
-                  "data": {}
+                  "data": {
+                    "points": [
+                      {
+                        "point": [
+                          2430.83,
+                          -549.66
+                        ]
+                      },
+                      {
+                        "point": [
+                          2475.45,
+                          -549.66
+                        ]
+                      },
+                      {
+                        "point": [
+                          2475.45,
+                          -681.98
+                        ]
+                      },
+                      {
+                        "point": [
+                          2520.08,
+                          -681.98
+                        ],
+                        "allowedToTop": false
+                      }
+                    ]
+                  }
                 },
                 "fail": {
                   "type": "fail",
@@ -2356,34 +2545,34 @@
                     "points": [
                       {
                         "point": [
-                          2852.08,
-                          -463.73
+                          2852.0761174504455,
+                          -463.7269667108293
                         ]
                       },
                       {
                         "point": [
                           2927.5,
-                          -463.73
+                          -463.7269667108293
                         ],
                         "locked": true
                       },
                       {
                         "point": [
                           2927.5,
-                          -356.99
+                          -356.99400667730754
                         ],
                         "locked": true
                       },
                       {
                         "point": [
-                          2691.9,
-                          -356.99
+                          2691.902380799263,
+                          -356.99400667730754
                         ]
                       },
                       {
                         "point": [
-                          2691.9,
-                          -250.24
+                          2691.902380799263,
+                          -250.24400667730757
                         ],
                         "toTop": true,
                         "allowedToTop": true
@@ -2482,34 +2671,34 @@
                     "points": [
                       {
                         "point": [
-                          2852.08,
-                          -572.73
+                          2852.0761174504455,
+                          -572.7270231375849
                         ]
                       },
                       {
                         "point": [
                           2909.75,
-                          -572.73
+                          -572.7270231375849
                         ],
                         "locked": true
                       },
                       {
                         "point": [
                           2909.75,
-                          -400.48
+                          -400.48400667730755
                         ],
                         "locked": true
                       },
                       {
                         "point": [
-                          2691.9,
-                          -400.48
+                          2691.902380799263,
+                          -400.48400667730755
                         ]
                       },
                       {
                         "point": [
-                          2691.9,
-                          -250.24
+                          2691.902380799263,
+                          -250.24400667730757
                         ],
                         "toTop": true,
                         "allowedToTop": true
@@ -2521,15 +2710,47 @@
                   }
                 },
                 {
-                  "id": "659756015ade7b5bb0653f1a",
+                  "id": "659b5ccee3980221fbab6786",
                   "type": "",
                   "target": "659757785ade7b5bb0653f25",
-                  "data": {}
+                  "data": {
+                    "points": [
+                      {
+                        "point": [
+                          2852.08,
+                          -518.23
+                        ]
+                      },
+                      {
+                        "point": [
+                          2939.12,
+                          -518.23
+                        ]
+                      },
+                      {
+                        "point": [
+                          2939.12,
+                          -248.85
+                        ]
+                      },
+                      {
+                        "point": [
+                          3026.17,
+                          -248.85
+                        ],
+                        "allowedToTop": false
+                      }
+                    ]
+                  }
                 }
               ]
             }
           },
-          "nodeID": "655bde666692b1475024a160"
+          "nodeID": "655bde666692b1475024a160",
+          "coords": [
+            0,
+            0
+          ]
         },
         "655bde666692b1475024a166": {
           "type": "api",
@@ -2568,37 +2789,9 @@
               "builtIn": {
                 "next": {
                   "type": "next",
-                  "target": "655bde666692b1475024a147",
+                  "target": "655bde666692b1475024a16a",
                   "id": "655bde666692b1475024a168",
-                  "data": {
-                    "points": [
-                      {
-                        "point": [
-                          3288.71,
-                          -596.07
-                        ]
-                      },
-                      {
-                        "point": [
-                          3316.34,
-                          -596.07
-                        ]
-                      },
-                      {
-                        "point": [
-                          3316.34,
-                          -741.07
-                        ]
-                      },
-                      {
-                        "point": [
-                          3343.96,
-                          -741.07
-                        ],
-                        "allowedToTop": true
-                      }
-                    ]
-                  }
+                  "data": {}
                 },
                 "fail": {
                   "type": "fail",
@@ -2745,20 +2938,20 @@
                       },
                       {
                         "point": [
-                          2053.45,
+                          2055.95,
                           -589.66
                         ]
                       },
                       {
                         "point": [
-                          2053.45,
-                          -687.41
+                          2055.95,
+                          -689.91
                         ]
                       },
                       {
                         "point": [
-                          2094.83,
-                          -687.41
+                          2099.83,
+                          -689.91
                         ],
                         "allowedToTop": true
                       }
@@ -3040,29 +3233,29 @@
                     "points": [
                       {
                         "point": [
-                          2533.19,
-                          209.88
+                          2533.186435672481,
+                          209.8794649093847
                         ],
                         "reversed": true
                       },
                       {
                         "point": [
                           2069.33,
-                          209.88
+                          209.8794649093847
                         ],
                         "locked": true
                       },
                       {
                         "point": [
                           2069.33,
-                          -637.91
+                          -637.9145414382715
                         ],
                         "locked": true
                       },
                       {
                         "point": [
-                          2098.83,
-                          -637.91
+                          2098.826084109981,
+                          -637.9145414382715
                         ]
                       }
                     ]
@@ -3127,7 +3320,11 @@
               "dynamic": []
             }
           },
-          "nodeID": "6560d4424802437b6c8ad996"
+          "nodeID": "6560d4424802437b6c8ad996",
+          "coords": [
+            0,
+            0
+          ]
         },
         "659757555ade7b5bb0653f1e": {
           "type": "block",
@@ -3140,15 +3337,15 @@
           },
           "nodeID": "659757555ade7b5bb0653f1e",
           "coords": [
-            4578.209750115497,
-            282.5716786141465
+            3192.165706740433,
+            -327.853140253428
           ]
         },
         "659757785ade7b5bb0653f25": {
           "type": "code",
           "data": {
             "name": "",
-            "code": "functionParams = JSON.parse(functionParamsText);\n\nif (functionName == \"get_geocode\") {\n  search_text = functionParams.search_text;\n  return \"mapbox\"\n} else if (functionName == \"get_weather\") {\n  lat = functionParams.lat;\n  lon = functionParams.lon;\n  return \"openweather\"\n}\n",
+            "code": "functionName   = required_action.submit_tool_outputs.tool_calls[0].function.name;\ntool_call_id   = required_action.submit_tool_outputs.tool_calls[0].id;\nfunctionParams = JSON.parse(required_action.submit_tool_outputs.tool_calls[0].function.arguments);\n\nif (functionName == \"get_geocode\") {\n  search_text = functionParams.search_text;\n  return \"mapbox\"\n} else if (functionName == \"get_weather\") {\n  lat = functionParams.lat;\n  lon = functionParams.lon;\n  return \"openweather\"\n}\n",
             "paths": [
               {
                 "label": "mapbox",
@@ -3169,26 +3366,26 @@
                     "points": [
                       {
                         "point": [
-                          4744.21,
-                          470.82
+                          3358.17,
+                          -139.6
                         ]
                       },
                       {
                         "point": [
-                          4774.18,
-                          470.82
+                          3388.13,
+                          -139.6
                         ]
                       },
                       {
                         "point": [
-                          4774.18,
-                          250.21
+                          3388.13,
+                          -360.22
                         ]
                       },
                       {
                         "point": [
-                          4804.14,
-                          250.21
+                          3418.1,
+                          -360.22
                         ],
                         "allowedToTop": false
                       }
@@ -3203,38 +3400,26 @@
                     "points": [
                       {
                         "point": [
-                          4744.21,
-                          525.32
+                          3358.17,
+                          -85.1
                         ]
                       },
                       {
                         "point": [
-                          4768.21,
-                          525.32
+                          3386.77,
+                          -85.1
                         ]
                       },
                       {
                         "point": [
-                          4768.21,
-                          541.06
+                          3386.77,
+                          -56.35
                         ]
                       },
                       {
                         "point": [
-                          4754.23,
-                          541.06
-                        ]
-                      },
-                      {
-                        "point": [
-                          4754.23,
-                          556.8
-                        ]
-                      },
-                      {
-                        "point": [
-                          4778.23,
-                          556.8
+                          3415.37,
+                          -56.35
                         ],
                         "allowedToTop": false
                       }
@@ -3298,26 +3483,26 @@
                     "points": [
                       {
                         "point": [
-                          5110.23,
-                          645.05
+                          3747.37,
+                          31.9
                         ]
                       },
                       {
                         "point": [
-                          5203.51,
-                          645.05
+                          3829.06,
+                          31.9
                         ]
                       },
                       {
                         "point": [
-                          5203.51,
-                          205.32
+                          3829.06,
+                          -405.1
                         ]
                       },
                       {
                         "point": [
-                          5296.79,
-                          205.32
+                          3910.75,
+                          -405.1
                         ],
                         "allowedToTop": false
                       }
@@ -3346,8 +3531,8 @@
           },
           "nodeID": "65975dee5ade7b5bb0653f44",
           "coords": [
-            4944.232477605756,
-            477.79895138397984
+            3581.370252332118,
+            -135.3531402014095
           ]
         },
         "65975e095ade7b5bb0653f4b": {
@@ -3385,28 +3570,28 @@
                     "points": [
                       {
                         "point": [
-                          5136.14,
-                          338.4599999999999
+                          3750.102560486142,
+                          -271.9671107761798
                         ]
                       },
                       {
                         "point": [
-                          5272.44,
-                          338.4599999999999
+                          3886.39,
+                          -271.9671107761798
                         ],
                         "locked": true
                       },
                       {
                         "point": [
-                          5272.44,
-                          205.321717497261
+                          3886.39,
+                          -405.1028137207031
                         ],
                         "locked": true
                       },
                       {
                         "point": [
-                          5296.793698826056,
-                          205.321717497261
+                          3910.7494042042126,
+                          -405.1028137207031
                         ]
                       }
                     ]
@@ -3421,7 +3606,11 @@
               "dynamic": []
             }
           },
-          "nodeID": "65975e095ade7b5bb0653f4b"
+          "nodeID": "65975e095ade7b5bb0653f4b",
+          "coords": [
+            0,
+            0
+          ]
         },
         "65975e095ade7b5bb0653f4e": {
           "type": "block",
@@ -3434,8 +3623,8 @@
           },
           "nodeID": "65975e095ade7b5bb0653f4e",
           "coords": [
-            4970.141568424997,
-            171.20804225523904
+            3584.097525049933,
+            -439.2167766123355
           ]
         },
         "659765469088d3104470fb52": {
@@ -3462,7 +3651,11 @@
               "dynamic": []
             }
           },
-          "nodeID": "659765469088d3104470fb52"
+          "nodeID": "659765469088d3104470fb52",
+          "coords": [
+            0,
+            0
+          ]
         },
         "659765929088d3104470fb62": {
           "type": "block",
@@ -3476,8 +3669,8 @@
           },
           "nodeID": "659765929088d3104470fb62",
           "coords": [
-            5462.793325508965,
-            126.32187220255486
+            4076.7492821339,
+            -484.1029466650199
           ]
         },
         "659765c39088d3104470fb74": {
@@ -3577,7 +3770,7 @@
               {
                 "type": "advance",
                 "variable": "apiMapBox",
-                "expression": "''"
+                "expression": "'pk.eyJ1IjoiZWxlbW9zIiwiYSI6ImNsMThoMThlYjA2YzUzZHFrbDZ2Z29qYW8ifQ.ZpV5ul37gz24ZPbeadxeUQ'"
               }
             ],
             "title": "API MAPBOX",
@@ -3603,7 +3796,7 @@
               {
                 "type": "advance",
                 "variable": "apiOpenWeather",
-                "expression": "''"
+                "expression": "'f369635965b00ad16ced5da4da4b9f3b'"
               }
             ],
             "title": "API OPENWEATHER",
@@ -3624,7 +3817,7 @@
         }
       },
       "offsetX": 660.3784532606145,
-      "offsetY": 781.3489202677721,
+      "offsetY": 881.3489202677721,
       "modified": 1699999587,
       "creatorID": 299371,
       "variables": [],
@@ -6810,7 +7003,7 @@
         }
       },
       "offsetX": 272,
-      "offsetY": 104,
+      "offsetY": 204,
       "modified": 1699999587,
       "creatorID": 299371,
       "variables": [],
@@ -6825,55 +7018,505 @@
   "intents": [
     {
       "id": "VF.YES",
-      "environmentID": "659755d05643e2ffb19c1381",
       "name": "VF.YES",
-      "createdByID": 299371,
       "description": null,
       "automaticReprompt": false,
       "entityOrder": [],
-      "createdAt": "2024-01-05T01:05:26.000Z",
-      "updatedAt": "2024-01-05T01:05:26.000Z",
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
       "folderID": null,
-      "assistantID": "659755d05643e2ffb19c1380",
-      "updatedByID": 299371
+      "updatedByID": 299371,
+      "createdByID": 299371
     },
     {
       "id": "VF.NO",
-      "environmentID": "659755d05643e2ffb19c1381",
       "name": "VF.NO",
-      "createdByID": 299371,
       "description": null,
       "automaticReprompt": false,
       "entityOrder": [],
-      "createdAt": "2024-01-05T01:05:26.000Z",
-      "updatedAt": "2024-01-05T01:05:26.000Z",
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
       "folderID": null,
-      "assistantID": "659755d05643e2ffb19c1380",
-      "updatedByID": 299371
+      "updatedByID": 299371,
+      "createdByID": 299371
     },
     {
       "id": "None",
-      "environmentID": "659755d05643e2ffb19c1381",
       "name": "None",
-      "createdByID": 299371,
       "description": null,
       "automaticReprompt": false,
       "entityOrder": [],
-      "createdAt": "2024-01-05T01:05:26.000Z",
-      "updatedAt": "2024-01-05T01:05:26.000Z",
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
       "folderID": null,
-      "assistantID": "659755d05643e2ffb19c1380",
-      "updatedByID": 299371
+      "updatedByID": 299371,
+      "createdByID": 299371
     }
   ],
   "utterances": [],
   "requiredEntities": [],
+  "folders": [],
   "responses": [],
   "responseVariants": [],
   "responseAttachments": [],
   "responseDiscriminators": [],
+  "variables": [
+    {
+      "id": "65d7ea3ac883b0bba4706bd4",
+      "name": "required_action",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": "",
+      "defaultValue": null,
+      "createdAt": "2024-02-23T00:43:39.000Z",
+      "updatedAt": "2024-02-23T00:43:39.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "user_id",
+      "name": "user_id",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "text",
+      "description": "The user's unique ID.",
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "timestamp",
+      "name": "timestamp",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "number",
+      "description": "UNIX timestamp (number of seconds since January 1st, 1970 at UTC).",
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "platform",
+      "name": "platform",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "text",
+      "description": "The platform your assistant is running on (voiceflow, alexa, ...).",
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "locale",
+      "name": "locale",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "text",
+      "description": "The locale of the user (eg. en-US, en-CA, it-IT, fr-FR, ...).",
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "apiKey",
+      "name": "apiKey",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "assistantID",
+      "name": "assistantID",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "threadID",
+      "name": "threadID",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "runID",
+      "name": "runID",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "runStatus",
+      "name": "runStatus",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "messageID",
+      "name": "messageID",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "assistantReply",
+      "name": "assistantReply",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "counter",
+      "name": "counter",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "functionName",
+      "name": "functionName",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "functionParams",
+      "name": "functionParams",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "sessions",
+      "name": "sessions",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "number",
+      "description": "The number of times a particular user has opened the app.",
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "search_text",
+      "name": "search_text",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "lat",
+      "name": "lat",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "lon",
+      "name": "lon",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "responseAPI",
+      "name": "responseAPI",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "tool_call_id",
+      "name": "tool_call_id",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "body",
+      "name": "body",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "responseToolOutput",
+      "name": "responseToolOutput",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "apiMapBox",
+      "name": "apiMapBox",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "apiOpenWeather",
+      "name": "apiOpenWeather",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "intent_confidence",
+      "name": "intent_confidence",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "number",
+      "description": "The confidence interval (measured as a value from 0 to 100) for the most recently matched intent.",
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "last_response",
+      "name": "last_response",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "text",
+      "description": "The assistant's last response (text/speak) in a string.",
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "last_event",
+      "name": "last_event",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "last_utterance",
+      "name": "last_utterance",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": true,
+      "datatype": "text",
+      "description": "The user's last utterance in a text string.",
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    },
+    {
+      "id": "functionParamsText",
+      "name": "functionParamsText",
+      "color": "#515A63",
+      "isArray": false,
+      "isSystem": false,
+      "datatype": "any",
+      "description": null,
+      "defaultValue": null,
+      "createdAt": "2024-02-22T23:25:37.000Z",
+      "updatedAt": "2024-02-22T23:25:37.000Z",
+      "folderID": null,
+      "updatedByID": 299371,
+      "createdByID": 299371
+    }
+  ],
   "attachments": [],
   "cardButtons": [],
+  "functions": [],
+  "functionPaths": [],
+  "functionVariables": [],
   "project": {
     "type": "chat",
     "name": "assistant_geocode_weather",
@@ -6910,7 +7553,7 @@
       "aiPlayground": true
     },
     "_id": "659755d05643e2ffb19c1380",
-    "updatedAt": "2024-01-08T00:53:11.275Z",
+    "updatedAt": "2024-02-23T01:16:46.889Z",
     "knowledgeBase": {
       "settings": {
         "chunkStrategy": {
